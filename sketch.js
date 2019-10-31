@@ -1,7 +1,32 @@
 let osc
+let osc2
+let osc3
+let osc4
+let osc5
+let osc6
+let osc7
+let osc8
+let osc9
+let osc10
+let osc11
+let osc12
+let osc13
+let osc14
+let osc15
+let osc16
+let osc17
+let osc18
+let osc19
+let osc20
+let osc21
+let osc22
+let osc23
+let osc24
+let osc25
+let osc26
 let env
 let frequency = 50
-let amplu = 10
+let amplu =10
 let noise
 let a = 0.1
 let b = 0.1
@@ -12,7 +37,7 @@ let opacity = 0
 let c1 = 255
 let c2 = 200
 let c3 = 70
-
+let rev = 0.5
 
 
     let am = 110.0
@@ -44,10 +69,7 @@ let c3 = 70
     let yb = true
     let rdm_bk = 0
 
-
     let reverb
-
-
 
     let be1
     let ba2
@@ -73,19 +95,10 @@ ba8 = loadImage('back8.jpg')
 ba9 = loadImage('back9.jpg')
 ba10 = loadImage('back10.jpg')
 
-
 }
-
- 
 
 
 function setup() {
-
-
-   
-
-
-
 
 
     let canvas = createCanvas(windowWidth, windowHeight)
@@ -172,10 +185,107 @@ function setup() {
 
      reverb = new p5.Reverb()
     osc.disconnect()
-    reverb.process(osc, .5, 2)
+    reverb.process(osc, rev, 2)
 
+     reverb2 = new p5.Reverb()
+    osc2.disconnect()
+    reverb2.process(osc2, rev, 2)
 
+     reverb3 = new p5.Reverb()
+    osc3.disconnect()
+    reverb3.process(osc3, rev, 2)
 
+    reverb4 = new p5.Reverb()
+    osc4.disconnect()
+    reverb4.process(osc4, rev, 2)
+
+     reverb5 = new p5.Reverb()
+    osc5.disconnect()
+    reverb5.process(osc5, rev, 2)
+
+     reverb6 = new p5.Reverb()
+    osc6.disconnect()
+    reverb6.process(osc6, rev, 2)
+
+    reverb7 = new p5.Reverb()
+    osc7.disconnect()
+    reverb7.process(osc7, rev, 2)
+
+     reverb8 = new p5.Reverb()
+    osc8.disconnect()
+    reverb8.process(osc8, rev, 2)
+
+     reverb9 = new p5.Reverb()
+    osc9.disconnect()
+    reverb9.process(osc9, rev, 2)
+
+    reverb10 = new p5.Reverb()
+    osc10.disconnect()
+    reverb10.process(osc10, rev, 2)
+
+     reverb11 = new p5.Reverb()
+    osc11.disconnect()
+    reverb11.process(osc11, rev, 2)
+
+     reverb12 = new p5.Reverb()
+    osc12.disconnect()
+    reverb12.process(osc12, rev, 2)
+
+    reverb13 = new p5.Reverb()
+    osc13.disconnect()
+    reverb13.process(osc13, rev, 2)
+
+     reverb14 = new p5.Reverb()
+    osc14.disconnect()
+    reverb14.process(osc14, rev, 2)
+
+     reverb15 = new p5.Reverb()
+    osc15.disconnect()
+    reverb15.process(osc15, rev, 2)
+
+    reverb16 = new p5.Reverb()
+    osc16.disconnect()
+    reverb16.process(osc16, rev, 2)
+
+     reverb17 = new p5.Reverb()
+    osc17.disconnect()
+    reverb17.process(osc17, rev, 2)
+
+     reverb18 = new p5.Reverb()
+    osc18.disconnect()
+    reverb18.process(osc18, rev, 2)
+
+    reverb19 = new p5.Reverb()
+    osc19.disconnect()
+    reverb19.process(osc19, rev, 2)
+
+     reverb20 = new p5.Reverb()
+    osc20.disconnect()
+    reverb20.process(osc20, rev, 2)
+
+     reverb21 = new p5.Reverb()
+    osc21.disconnect()
+    reverb21.process(osc21, rev, 2)
+
+    reverb22 = new p5.Reverb()
+    osc22.disconnect()
+    reverb22.process(osc22, rev, 2)
+
+     reverb23 = new p5.Reverb()
+    osc23.disconnect()
+    reverb23.process(osc23, rev, 2)
+
+     reverb24 = new p5.Reverb()
+    osc24.disconnect()
+    reverb24.process(osc24, rev, 2)
+
+    reverb25 = new p5.Reverb()
+    osc25.disconnect()
+    reverb25.process(osc25, rev, 2)
+
+     reverb26 = new p5.Reverb()
+    osc26.disconnect()
+    reverb26.process(osc26, rev, 2)
 
     
     osc.amp(amplu)
@@ -335,14 +445,7 @@ function setup() {
 }
 
 
-
-
-
 function draw() {
-
-        
-
-
 
         if (rdm_bk <= 1 && rdm_bk > 0) {
 
@@ -426,19 +529,25 @@ function draw() {
         rect( 40, 40, 50, 200)
         fill(0)
         textSize(30)
-        text('B', 55, 90)
+        text('C#', 40+5, 40+50)
         pop()
 
         push()
         noFill()
         fill(250, 255, 250)
         rect( 40*2+13, 40, 50, 200)
+         fill(0)
+        textSize(30)
+        text('D', 40*2+13+15, 40+50)
         pop()
 
         push()
         noFill()
         fill(250, 255, 250)
         rect( 40*3+26, 40, 50, 200)
+         fill(0)
+        textSize(30)
+        text('D#', 40*3+26+5, 40+50)
         pop()
 
 
@@ -446,18 +555,27 @@ function draw() {
         noFill()
         fill(250, 255, 250)
         rect( 40*4+39, 40, 50, 200)
+         fill(0)
+        textSize(30)
+        text('E', 40*4+39+15, 40+50)
         pop()
 
         push()
         noFill()
         fill(250, 255, 250)
         rect( 40*5+52, 40, 50, 200)
+         fill(0)
+        textSize(30)
+        text('F', 40*5+52+15, 40+50)
         pop()
 
         push()
         noFill()
         fill(250, 255, 250)
         rect( 40*6+65, 40, 50, 200)
+         fill(0)
+        textSize(30)
+        text('F#', 40*6+65+5, 40+50)
         pop()
 
 
@@ -465,18 +583,27 @@ function draw() {
         noFill()
         fill(250, 255, 250)
         rect( 40*7+78, 40, 50, 200)
+         fill(0)
+        textSize(30)
+        text('G', 40*7+78+5, 40+50)
         pop()
 
         push()
         noFill()
         fill(250, 255, 250)
         rect( 40*8+91, 40, 50, 200)
+         fill(0)
+        textSize(30)
+        text('G#', 40*8+91+5, 40+50)
         pop()
 
         push()
         noFill()
         fill(250, 255, 250)
         rect( 40*9+104, 40, 50, 200)
+         fill(0)
+        textSize(30)
+        text('A', 40*9+104+15, 40+50)
         pop()
 
 
@@ -484,6 +611,9 @@ function draw() {
         noFill()
         fill(250, 255, 250)
         rect( 40*10+117, 40, 50, 200)
+         fill(0)
+        textSize(30)
+        text('A#', 40*10+117+5, 40+50)
         pop()
 
 
@@ -493,18 +623,27 @@ function draw() {
         noFill()
         fill(250, 255, 250)
         rect( 40, 40+220, 50, 200)
+        fill(0)
+        textSize(30)
+        text('E', 40+15, 40+220+50)
         pop()
 
         push()
         noFill()
         fill(250, 255, 250)
         rect( 40*2+13, 40+220, 50, 200)
+        fill(0)
+        textSize(30)
+        text('F', 40*2+13+15, 40+220+50)
         pop()
 
         push()
         noFill()
         fill(250, 255, 250)
         rect( 40*3+26, 40+220, 50, 200)
+        fill(0)
+        textSize(30)
+        text('F#', 40*3+26+5, 40+220+50)
         pop()
 
 
@@ -512,18 +651,27 @@ function draw() {
         noFill()
         fill(250, 255, 250)
         rect( 40*4+39, 40+220, 50, 200)
+        fill(0)
+        textSize(30)
+        text('G', 40*4+39+15, 40+220+50)
         pop()
 
         push()
         noFill()
         fill(250, 255, 250)
         rect( 40*5+52, 40+220, 50, 200)
+        fill(0)
+        textSize(30)
+        text('G#', 40*5+52+5, 40+220+50)
         pop()
 
         push()
         noFill()
         fill(250, 255, 250)
         rect( 40*6+65, 40+220, 50, 200)
+        fill(0)
+        textSize(30)
+        text('A', 40*6+65+15, 40+220+50)
         pop()
 
 
@@ -531,18 +679,27 @@ function draw() {
         noFill()
         fill(250, 255, 250)
         rect( 40*7+78, 40+220, 50, 200)
+        fill(0)
+        textSize(30)
+        text('A#', 40*7+78+5, 40+220+50)
         pop()
 
         push()
         noFill()
         fill(250, 255, 250)
         rect( 40*8+91, 40+220, 50, 200)
+        fill(0)
+        textSize(30)
+        text('B', 40*8+91+15, 40+220+50)
         pop()
 
         push()
         noFill()
         fill(250, 255, 250)
         rect( 40*9+104, 40+220, 50, 200)
+        fill(0)
+        textSize(30)
+        text('C', 40*9+104+15, 40+220+50)
         pop()
 
 
@@ -552,18 +709,27 @@ function draw() {
         noFill()
         fill(250, 255, 250)
         rect( 40, 40+440, 50, 200)
+        fill(0)
+        textSize(30)
+        text('A', 40+15, 40+440+50)
         pop()
 
         push()
         noFill()
         fill(250, 255, 250)
         rect( 40*2+13, 40+440, 50, 200)
+        fill(0)
+        textSize(30)
+        text('A#', 40*2+13+5, 40+440+50)
         pop()
 
         push()
         noFill()
         fill(250, 255, 250)
         rect( 40*3+26, 40+440, 50, 200)
+        fill(0)
+        textSize(30)
+        text('B', 40*3+26+15, 40+440+50)
         pop()
 
 
@@ -571,18 +737,27 @@ function draw() {
         noFill()
         fill(250, 255, 250)
         rect( 40*4+39, 40+440, 50, 200)
+        fill(0)
+        textSize(30)
+        text('C', 40*4+39+15, 40+440+50)
         pop()
 
         push()
         noFill()
         fill(250, 255, 250)
         rect( 40*5+52, 40+440, 50, 200)
+        fill(0)
+        textSize(30)
+        text('C#', 40*5+52+5, 40+440+50)
         pop()
 
         push()
         noFill()
         fill(250, 255, 250)
         rect( 40*6+65, 40+440, 50, 200)
+        fill(0)
+        textSize(30)
+        text('D', 40*6+65+15, 40+440+50)
         pop()
 
          push()
@@ -591,14 +766,9 @@ function draw() {
         rect( 40*7+78, 40+440, 50, 200)
         fill(0)
         textSize(30)
-        text('A', )
+        text('D#',40*7+78+5, 40+440+50 )
         pop()
 
-
-
-
-
-        
 
 }
 
@@ -607,25 +777,6 @@ function windowResized() {
 
 }
 
-
-// function mouseClicked() {
-//     osc.start()
-// }
-
-// function mousePressed() {
-    
-//     osc.amp(env)
-//     env.triggerAttack()
-
-//     mouseDragged()
-// }
-
-// function mouseReleased() {
-//     env.triggerRelease()
-//     osc.stop()
-// }
-
-// function mouseDragged() {
 //     let frequency = map(mouseY, 0, height, 2000, 50)
 //     osc.freq(frequency)
 
@@ -893,18 +1044,10 @@ function keyPressed() {
      }
 
     
-       
-
+    
 
 
 }
-
-//color changer
-
- 
-
-
-
 
 function keyReleased() {
 
@@ -1070,9 +1213,7 @@ function keyReleased() {
    env26.triggerRelease()
     osc26.stop()
 
-    }
-
-    
+    }   
 
 
 }
