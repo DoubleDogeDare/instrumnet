@@ -26,18 +26,30 @@ let osc25
 let osc26
 let env
 let frequency = 50
-let amplu =10
+let amplu = 40
 let noise
 let a = 0.1
 let b = 0.1
 let c = 0.2
 let d = 0.5
-let osc_type = 'square'
+let osc_type = 'sawtooth'
 let opacity = 0
 let c1 = 255
 let c2 = 200
 let c3 = 70
 let rev = 0.5
+let x = 750
+let gb = -10
+let sj = 70
+let note_indicator = 0
+let clr_background = 0
+let clear = 0
+let bl = 300
+let beatstopper = 0
+let square_time
+let triangle_time
+let sine_time
+let sawtooth_time
 
 
     let am = 110.0
@@ -69,9 +81,36 @@ let rev = 0.5
     let yb = true
     let rdm_bk = 0
 
+    let b1 = bl
+    let b2 = bl
+    let b3 = bl
+    let b4 = bl
+    let b5 = bl
+    let b6 = bl
+    let b7 = bl
+    let b8 = bl
+    let b9 = bl
+    let b10 = bl
+    let b11 = bl 
+    let b12 = bl
+    let b13 = bl
+    let b14 = bl
+    let b15 = bl
+    let b16 = bl
+    let b17 = bl
+    let b18 = bl
+    let b19 = bl
+    let bk20 = bl
+    let b21 = bl
+    let b22 = bl
+    let b23 = bl
+    let b25 = bl
+    let b26 = bl
+    let b27 = bl
+
     let reverb
 
-    let be1
+    let ba1
     let ba2
     let ba3
     let ba4
@@ -81,25 +120,44 @@ let rev = 0.5
     let ba8
     let ba9
     let ba10
+    let ba11
+
+    let beat1
+
+
 
 function preload() {
 
-be1 = loadImage('back.jpg')
-ba2 = loadImage('back2.jpg')
-ba3 = loadImage('back3.jpg')
-ba4 = loadImage('back4.jpg')
-ba5 = loadImage('back5.jpg')
-ba6 = loadImage('back6.jpg')
-ba7 = loadImage('back7.jpg')
-ba8 = loadImage('back8.jpg')
-ba9 = loadImage('back9.jpg')
-ba10 = loadImage('back10.jpg')
+ba1 = loadImage('0.jpg')
+ba2 = loadImage('20.jpg')
+ba3 = loadImage('-20.jpg')
+ba4 = loadImage('60.jpg')
+ba5 = loadImage('-60.jpg')
+ba6 = loadImage('100.jpg')
+ba7 = loadImage('-100.jpg')
+ba8 = loadImage('140.jpg')
+ba9 = loadImage('-140.jpg')
+ba10 = loadImage('180.jpg')
+ba11 = loadImage('-180.jpg')
+
+     beat1 = loadSound('tec1.mp3')
+    beat2 = loadSound('tec2.mp3')
+    beat3 = loadSound('tec3.mp3')
+    beat4 = loadSound('drumo1.mp3')
+    beat5 = loadSound('drumo2.mp3')
+    beat6 = loadSound('drumo3.mp3')
+    beat7 = loadSound('beep1.mp3')
+    beat8 = loadSound('beep2.mp3')
+    beat9 = loadSound('beep3.mp3')
+
+
 
 }
 
 
 function setup() {
 
+   
 
     let canvas = createCanvas(windowWidth, windowHeight)
     canvas.parent('p5')
@@ -445,332 +503,130 @@ function setup() {
 }
 
 
-function draw() {
 
-        if (rdm_bk <= 1 && rdm_bk > 0) {
+           function keyTyped() {
+                
+                    if (key == 'z') {
+                        note_indicator = 1
+                        clr_background = 1
+
+                    }
+                    if (key == 'x') {
+                        note_indicator = 2
+                        clr_background = 2
+                    }
+                    if (key == 'c') {
+                        note_indicator = 3
+                        clr_background = 3
+
+                    }
+                    if (key == 'v') {
+                        note_indicator = 4
+                        clr_background = 4
+                    }
+                    if (key == 'b') {
+                        note_indicator = 5
+                        clr_background = 5
+
+                    }
+                    if (key == 'n') {
+                        note_indicator = 6
+                        clr_background = 6
+                    }
+                    if (key == 'm') {
+                        note_indicator = 7
+                        clr_background = 7
+
+                    }
+                    if (key == 'a') {
+                        note_indicator = 8
+                        clr_background = 8
+                    }
+                    if (key == 's') {
+                        note_indicator = 9
+                        clr_background = 9
+
+                    }
+                    if (key == 'd') {
+                        note_indicator = 10
+                        clr_background = 10
+                    }
+                    if (key == 'f') {
+                        note_indicator = 11
+                        clr_background = 11
+
+                    }
+                    if (key == 'g') {
+                        note_indicator = 12
+                        clr_background = 12
+                    }
+                    if (key == 'h') {
+                        note_indicator = 13
+                        clr_background = 1
+
+                    }
+                    if (key == 'j') {
+                        note_indicator = 14
+                        clr_background = 2
+                    }
+                    if (key == 'k') {
+                        note_indicator = 15
+                        clr_background = 3
+
+                    }
+                    if (key == 'l') {
+                        note_indicator = 16
+                        clr_background =  4
+                    }
+                    if (key == 'q') {
+                        note_indicator = 17
+                        clr_background = 5
+
+                    }
+                    if (key == 'w') {
+                        note_indicator = 18
+                        clr_background = 6
+                    }
+                    if (key == 'e') {
+                        note_indicator = 19
+                        clr_background = 7
+
+                    }
+                    if (key == 'r') {
+                        note_indicator = 20
+                        clr_background = 8
+                    }
+                    if (key == 't') {
+                        note_indicator = 21
+                        clr_background = 9
+
+                    }
+                    if (key == 'y') {
+                        note_indicator = 22
+                        clr_background = 10
+                    }
+                    if (key == 'u') {
+                        note_indicator = 23
+                        clr_background = 11
+
+                    }
+                    if (key == 'i') {
+                        note_indicator = 24
+                        clr_background = 12
+                    }
+                    if (key == 'o') {
+                        note_indicator = 25
+                        clr_background = 1
+
+                    }
+                    if (key == 'p') {
+                        note_indicator = 26
+                        clr_background = 2
+                    }
+                    
+                }
 
-                image(be1, 0, 0, width, height)
 
-        }
-
-        if (rdm_bk <= 2 && rdm_bk >1) {
-
-                image(ba2, 0, 0, width, height)
-
-        }
-
-        if (rdm_bk <= 3 && rdm_bk > 2) {
-
-                image(ba3, 0, 0, width, height)
-
-        }
-
-        if (rdm_bk <= 4  && rdm_bk > 3) {
-
-                image(ba4, 0, 0, width, height)
-
-        }
-
-        if (rdm_bk <= 5 && rdm_bk > 4) {
-
-                image(ba5, 0, 0, width, height)
-
-        }
-
-        if (rdm_bk <= 6 && rdm_bk >5) {
-
-
-                image(ba6, 0, 0, width, height)
-
-        }
-
-        if (rdm_bk <= 7 && rdm_bk > 6) {
-
-                image(ba7, 0, 0, width, height)
-
-        }
-
-        if (rdm_bk <= 8 && rdm_bk > 7) {
-
-                    image(ba8, 0, 0, width, height)
-
-        }
-
-        if (rdm_bk <= 9 && rdm_bk > 8) {
-
-                image(ba9, 0, 0, width, height)
-
-        }
-
-        if (rdm_bk <= 10 && rdm_bk >9) {
-
-               image(ba10, 0, 0, width, height)     
-        }
-
-
-
-        //type
-        push()
-        noFill()
-        fill(255)
-        rect(40, 700 , 25 ,25)
-        pop()
-        push()
-        noFill()
-        fill(255)
-        rect(68, 700 , 25 ,25)
-        pop()
-
-        //keys
-
-        push()
-        noFill()
-        fill(250, 255, 250)
-        rect( 40, 40, 50, 200)
-        fill(0)
-        textSize(30)
-        text('C#', 40+5, 40+50)
-        pop()
-
-        push()
-        noFill()
-        fill(250, 255, 250)
-        rect( 40*2+13, 40, 50, 200)
-         fill(0)
-        textSize(30)
-        text('D', 40*2+13+15, 40+50)
-        pop()
-
-        push()
-        noFill()
-        fill(250, 255, 250)
-        rect( 40*3+26, 40, 50, 200)
-         fill(0)
-        textSize(30)
-        text('D#', 40*3+26+5, 40+50)
-        pop()
-
-
-        push()
-        noFill()
-        fill(250, 255, 250)
-        rect( 40*4+39, 40, 50, 200)
-         fill(0)
-        textSize(30)
-        text('E', 40*4+39+15, 40+50)
-        pop()
-
-        push()
-        noFill()
-        fill(250, 255, 250)
-        rect( 40*5+52, 40, 50, 200)
-         fill(0)
-        textSize(30)
-        text('F', 40*5+52+15, 40+50)
-        pop()
-
-        push()
-        noFill()
-        fill(250, 255, 250)
-        rect( 40*6+65, 40, 50, 200)
-         fill(0)
-        textSize(30)
-        text('F#', 40*6+65+5, 40+50)
-        pop()
-
-
-        push()
-        noFill()
-        fill(250, 255, 250)
-        rect( 40*7+78, 40, 50, 200)
-         fill(0)
-        textSize(30)
-        text('G', 40*7+78+5, 40+50)
-        pop()
-
-        push()
-        noFill()
-        fill(250, 255, 250)
-        rect( 40*8+91, 40, 50, 200)
-         fill(0)
-        textSize(30)
-        text('G#', 40*8+91+5, 40+50)
-        pop()
-
-        push()
-        noFill()
-        fill(250, 255, 250)
-        rect( 40*9+104, 40, 50, 200)
-         fill(0)
-        textSize(30)
-        text('A', 40*9+104+15, 40+50)
-        pop()
-
-
-        push()
-        noFill()
-        fill(250, 255, 250)
-        rect( 40*10+117, 40, 50, 200)
-         fill(0)
-        textSize(30)
-        text('A#', 40*10+117+5, 40+50)
-        pop()
-
-
-            //r2
-
-        push()
-        noFill()
-        fill(250, 255, 250)
-        rect( 40, 40+220, 50, 200)
-        fill(0)
-        textSize(30)
-        text('E', 40+15, 40+220+50)
-        pop()
-
-        push()
-        noFill()
-        fill(250, 255, 250)
-        rect( 40*2+13, 40+220, 50, 200)
-        fill(0)
-        textSize(30)
-        text('F', 40*2+13+15, 40+220+50)
-        pop()
-
-        push()
-        noFill()
-        fill(250, 255, 250)
-        rect( 40*3+26, 40+220, 50, 200)
-        fill(0)
-        textSize(30)
-        text('F#', 40*3+26+5, 40+220+50)
-        pop()
-
-
-        push()
-        noFill()
-        fill(250, 255, 250)
-        rect( 40*4+39, 40+220, 50, 200)
-        fill(0)
-        textSize(30)
-        text('G', 40*4+39+15, 40+220+50)
-        pop()
-
-        push()
-        noFill()
-        fill(250, 255, 250)
-        rect( 40*5+52, 40+220, 50, 200)
-        fill(0)
-        textSize(30)
-        text('G#', 40*5+52+5, 40+220+50)
-        pop()
-
-        push()
-        noFill()
-        fill(250, 255, 250)
-        rect( 40*6+65, 40+220, 50, 200)
-        fill(0)
-        textSize(30)
-        text('A', 40*6+65+15, 40+220+50)
-        pop()
-
-
-        push()
-        noFill()
-        fill(250, 255, 250)
-        rect( 40*7+78, 40+220, 50, 200)
-        fill(0)
-        textSize(30)
-        text('A#', 40*7+78+5, 40+220+50)
-        pop()
-
-        push()
-        noFill()
-        fill(250, 255, 250)
-        rect( 40*8+91, 40+220, 50, 200)
-        fill(0)
-        textSize(30)
-        text('B', 40*8+91+15, 40+220+50)
-        pop()
-
-        push()
-        noFill()
-        fill(250, 255, 250)
-        rect( 40*9+104, 40+220, 50, 200)
-        fill(0)
-        textSize(30)
-        text('C', 40*9+104+15, 40+220+50)
-        pop()
-
-
-        //R3
-
-        push()
-        noFill()
-        fill(250, 255, 250)
-        rect( 40, 40+440, 50, 200)
-        fill(0)
-        textSize(30)
-        text('A', 40+15, 40+440+50)
-        pop()
-
-        push()
-        noFill()
-        fill(250, 255, 250)
-        rect( 40*2+13, 40+440, 50, 200)
-        fill(0)
-        textSize(30)
-        text('A#', 40*2+13+5, 40+440+50)
-        pop()
-
-        push()
-        noFill()
-        fill(250, 255, 250)
-        rect( 40*3+26, 40+440, 50, 200)
-        fill(0)
-        textSize(30)
-        text('B', 40*3+26+15, 40+440+50)
-        pop()
-
-
-        push()
-        noFill()
-        fill(250, 255, 250)
-        rect( 40*4+39, 40+440, 50, 200)
-        fill(0)
-        textSize(30)
-        text('C', 40*4+39+15, 40+440+50)
-        pop()
-
-        push()
-        noFill()
-        fill(250, 255, 250)
-        rect( 40*5+52, 40+440, 50, 200)
-        fill(0)
-        textSize(30)
-        text('C#', 40*5+52+5, 40+440+50)
-        pop()
-
-        push()
-        noFill()
-        fill(250, 255, 250)
-        rect( 40*6+65, 40+440, 50, 200)
-        fill(0)
-        textSize(30)
-        text('D', 40*6+65+15, 40+440+50)
-        pop()
-
-         push()
-        noFill()
-        fill(250, 255, 250)
-        rect( 40*7+78, 40+440, 50, 200)
-        fill(0)
-        textSize(30)
-        text('D#',40*7+78+5, 40+440+50 )
-        pop()
-
-
-}
 
 function windowResized() {
     resizeCanvas(windowWidth, windowHeight)
@@ -785,6 +641,7 @@ function windowResized() {
 // }
 
 function keyPressed() {
+
     if (keyCode === 90) {
 
         osc.start()
@@ -1041,12 +898,9 @@ function keyPressed() {
 
        }
 
+       print(mouseX, mouseY)
+
      }
-
-    
-    
-
-
 }
 
 function keyReleased() {
@@ -1213,10 +1067,717 @@ function keyReleased() {
    env26.triggerRelease()
     osc26.stop()
 
-    }   
+    }  
+
+     // for (let beet = 49; beet < 57; beet++) {
+     //        if (keyCode === )
+
+     //    {
+
+    if (keyCode === 49) {
+
+            beat1.play()
+            beat1.loop()
+
+            beatstopper = beatstopper + 1
+            if (beatstopper >= 2) {
+                beat1.stop()
+                beatstopper = 0
+            }
+    }
+    if (keyCode === 50) {
+            beat2.play()
+            beat2.loop()
+            beat2.setVolume(0.2)
+            
+
+             beatstopper = beatstopper + 1
+            if (beatstopper >= 2) {
+                beat2.stop()
+                beatstopper = 0
+            }
+    }
+    if (keyCode === 51) {
+             beat3.play()
+             beat3.loop()
+
+              beatstopper = beatstopper + 1
+            if (beatstopper >= 2) {
+                beat3.stop()
+                beatstopper = 0
+            }
+        
+    }
+    if (keyCode === 52) {
+             beat4.play()
+             beat4.loop()
+              beatstopper = beatstopper + 1
+            if (beatstopper >= 2) {
+                beat4.stop()
+                beatstopper = 0
+            }
+    }
+    if (keyCode === 53) {
+            beat5.play()
+            beat5.loop()
+             beatstopper = beatstopper + 1
+            if (beatstopper >= 2) {
+                beat5.stop()
+               
+                beatstopper = 0
+            }
+    }
+    if (keyCode === 54) {
+            beat6.play() 
+            beat6.loop()
+
+             beatstopper = beatstopper + 1
+            if (beatstopper >= 2) {
+                beat6.stop()
+                beatstopper = 0
+            }       
+    }
+    if (keyCode === 55) {
+            beat7.play()
+            beat7.loop()
+
+             beatstopper = beatstopper + 1
+            if (beatstopper >= 2) {
+                beat7.stop()
+                beatstopper = 0
+            }
+    }
+    if (keyCode === 56) {
+            beat8.play()
+            beat8.loop()
+
+             beatstopper = beatstopper + 1
+            if (beatstopper >= 2) {
+                beat8.stop()
+                
+                beatstopper = 0
+            }
+    }
+    if (keyCode === 57) {
+            beat9.play()
+            beat9.loop()
+
+             beatstopper = beatstopper + 1
+            if (beatstopper >= 2) {
+                beat9.stop()
+                beatstopper = 0
+            }
+      }
+
+      if (keyCode === 219) {
+        sine_time = true
+        square_time = false
+        sawtooth_time = false
+        triangle_time = false
+      } 
+      if (keyCode === 221){
+        square_time = true
+        triangle_time = false
+        sine_time = false
+        sawtooth_time = false
+      }
+      if (keyCode === 189) {
+        sawtooth_time = true
+        square_time = false
+        sine_time = false
+        triangle_time = false
+      }
+      if (keyCode === 287){
+        triangle_time = true
+        square_time = false
+        sawtooth_time = false
+        square_time = false
+      }
+
+        
 
 
 }
+
+function draw() {
+
+        if (square_time == true){
+            osc_type = 'square'
+        }
+
+        if (triangle_time == true){
+            osc_type = 'triangle'
+        } 
+
+        if (sine_time == true) {
+            osc_type = "sine"
+        } 
+
+        if (sawtooth_time == true) {
+            osc_type = 'sawtooth'
+        }
+
+print(osc_type)
+
+      
+
+        image(ba1, 0, 0, width, height)
+
+        if (clr_background == 1) {
+            image(ba2, 0, 0, width, height, 0, 0, 0, 0,)
+            clear = clear + 1
+
+        }
+
+         if (clr_background == 2) {
+            image(ba3, 0, 0, width, height, 0, 0, 0, 0,)
+            clear = clear + 1
+
+        }
+         if (clr_background == 3) {
+            image(ba4, 0, 0, width, height, 0, 0, 0, 0,)
+            clear = clear + 1
+
+        }
+         if (clr_background == 4) {
+            image(ba5, 0, 0, width, height, 0, 0, 0, 0,)
+            clear = clear + 1
+
+        }
+         if (clr_background == 5) {
+            image(ba6, 0, 0, width, height, 0, 0, 0, 0,)
+            clear = clear + 1
+
+        }
+         if (clr_background == 6) {
+            image(ba7, 0, 0, width, height, 0, 0, 0, 0,)
+            clear = clear + 1
+
+        }
+         if (clr_background == 7) {
+            image(ba8, 0, 0, width, height, 0, 0, 0, 0,)
+            clear = clear + 1
+
+        }
+         if (clr_background == 8) {
+            image(ba9, 0, 0, width, height, 0, 0, 0, 0,)
+            clear = clear + 1
+
+        }
+         if (clr_background == 9) {
+            image(ba10, 0, 0, width, height, 0, 0, 0, 0,)
+            clear = clear + 1
+
+        }
+         if (clr_background == 10) {
+            image(ba11, 0, 0, width, height, 0, 0, 0, 0,)
+            clear = clear + 1
+
+        }
+         if (clr_background == 11) {
+            image(ba1, 0, 0, width, height, 0, 0, 0, 0,)
+            clear = clear + 1
+
+        }
+         if (clr_background == 12) {
+            image(ba2, 0, 0, width, height, 0, 0, 0, 0,)
+            clear = clear + 1
+
+        }
+
+
+
+        //WAVEFORM
+
+    
+
+        //keys and wave
+        push()
+
+        for (let y = 1; y < 27; y++) {
+
+
+            fill(255, 255, 255, 30)
+            rect(y * 70, 850, 60, 30)
+            fill(255)
+            textSize(30)
+
+             if (y == 1) {
+            text('A', y * sj  + 5 - gb, 875)
+            if (note_indicator == 1) {
+                fill(70, 255, 120)
+                rect(y * sj, 875, 60, 5)
+
+                noFill()   
+                fill(255, 255, 255, 100)
+                rect(y *sj, 0, 20, b1)
+                 b1 = b1 - 5
+              
+            } else {
+                b1 = 300
+            }
+           }
+
+
+             if (y == 2) {
+            text('Bb', y * sj + 5 - gb, 875)
+            if (note_indicator == 2) {
+                fill(70, 255, 120)
+                rect(y * sj, 875, 60, 5)
+
+                    noFill()   
+                fill(255, 255, 255, 100)
+                rect(y *sj, 0, 20, b2)
+                b2 = b2 - 5
+            } else {
+                b2 = 300
+            }
+           }
+
+
+             if (y == 3) {
+            text('B', y * sj + 5 - gb, 875)
+            if (note_indicator == 3) {
+                fill(70, 255, 120)
+                rect(y * sj, 875, 60, 5)
+            
+                    noFill()   
+                fill(255, 255, 255, 100)
+                rect(y *sj, 0, 20, b3)
+                b3 = b3 - 5
+            } else {
+                b3 = 300
+            }
+           }
+
+
+             if (y == 4) {
+            text('C', y * sj + 5 - gb, 875)
+            if (note_indicator == 4) {
+                fill(70, 255, 120)
+                rect(y * sj, 875, 60, 5)
+            
+                    noFill()   
+                fill(255, 255, 255, 100)
+                rect(y *sj, 0, 20, b4)
+                b4 = b4 - 5
+            } else {
+                b4 = 300
+            }
+           }
+
+
+            if (y == 5) {
+            text('C#', y * sj + 5 - gb, 875)
+            if (note_indicator == 5) {
+                fill(70, 255, 120)
+                rect(y * sj, 875, 60, 5)
+            
+                    noFill()   
+                fill(255, 255, 255, 100)
+                rect(y *sj, 0, 20, b5)
+                b5 = b5 - 5
+            } else {
+                b5 = 300
+            }
+           }
+
+
+             if (y == 6) {
+            text('D', y * sj + 5 - gb, 875)
+            if (note_indicator == 6) {
+                fill(70, 255, 120)
+                rect(y * sj, 875, 60, 5)
+            
+                    noFill()   
+                fill(255, 255, 255, 100)
+                rect(y *sj, 0, 20, b6)
+                b6 = b6 - 5
+            } else {
+                b6 = 300
+            }
+           }
+
+
+             if (y == 7) {
+            text('Eb', y * sj + 5 - gb, 875)
+            if (note_indicator == 7) {
+                fill(70, 255, 120)
+                rect(y * sj, 875, 60, 5)
+
+                    noFill()   
+                fill(255, 255, 255, 100)
+                rect(y *sj, 0, 20, b7)
+                b7 = b7 - 5
+            } else {
+                b7 = 300
+            }
+           }
+
+
+             if (y == 8) {
+            text('E', y * sj + 5 - gb, 875)
+            if (note_indicator == 8) {
+                fill(70, 255, 120)
+                rect(y * sj, 875, 60, 5)
+            
+             noFill()   
+                fill(255, 255, 255, 100)
+                rect(y *sj, 0, 20, b8)
+                b8 = b8 - 5
+            } else {
+                b8 = 300
+            }
+           }
+
+            if (y == 9) {
+            text('F', y * sj + 5 - gb, 875)
+            if (note_indicator == 9) {
+                fill(70, 255, 120)
+                rect(y * sj, 875, 60, 5)
+
+                    noFill()   
+                fill(255, 255, 255, 100)
+                rect(y *sj, 0, 20, b9)
+                b9 = b9 - 5
+            } else {
+                b9 = 300
+            }
+           }
+
+
+             if (y == 10) {
+            text('F#', y * sj + 5 - gb, 875)
+            if (note_indicator == 10) {
+                fill(70, 255, 120)
+                rect(y * sj, 875, 60, 5)
+                    
+                    noFill()   
+                fill(255, 255, 255, 100)
+                rect(y *sj, 0, 20, b10)
+                b10 = b10 - 5
+            } else {
+                b10 = 300
+            }
+           }
+
+
+             if (y == 11) {
+            text('G', y * sj + 5 - gb, 875)
+            if (note_indicator == 11) {
+                fill(70, 255, 120)
+                rect(y * sj, 875, 60, 5)
+            
+            
+                    noFill()   
+                fill(255, 255, 255, 100)
+                rect(y *sj, 0, 20, b11)
+                b11 = b11 - 5
+            } else {
+                b11 = 300
+            }
+           }
+
+
+
+             if (y == 12) {
+            text('G#', y * sj + 5 - gb, 875)
+            if (note_indicator == 12) {
+                fill(70, 255, 120)
+                rect(y * sj, 875, 60, 5)
+                    
+                    noFill()   
+                fill(255, 255, 255, 100)
+                rect(y *sj, 0, 20, b12)
+                b12 = b12 - 5
+            } else {
+                b12 = 300
+            }
+           }
+
+
+           if (y == 13) {
+            text('A', y * sj + 5 - gb, 875)
+            if (note_indicator == 13) {
+                fill(70, 255, 120)
+                rect(y * sj, 875, 60, 5)
+                    
+                     noFill()   
+                fill(255, 255, 255, 100)
+                rect(y *sj, 0, 20, b13)
+                b13 = b13 - 5
+            } else {
+                b13 = 300
+            }
+           }
+
+
+             if (y == 14) {
+            text('Bb', y * sj + 5 - gb, 875)
+            if (note_indicator == 14) {
+                fill(70, 255, 120)
+                rect(y * sj, 875, 60, 5)
+                    
+                     noFill()   
+                fill(255, 255, 255, 100)
+                rect(y *sj, 0, 20, b14)
+                b14 = b14 - 5
+            } else {
+                b14 = 300
+            }
+           }
+
+
+            if (y == 15) {
+            text('B', y * sj + 5 - gb, 875)
+            if (note_indicator == 15) {
+                fill(70, 255, 120)
+                rect(y * sj, 875, 60, 5)
+                    
+                     noFill()   
+                fill(255, 255, 255, 100)
+                rect(y *sj, 0, 20, b15)
+                b15 = b15 - 5
+            } else {
+                b15 = 300
+            }
+           }
+
+
+
+             if (y == 16) {
+            text('C', y * sj + 5 - gb, 875)
+            if (note_indicator == 16) {
+                fill(70, 255, 120)
+                rect(y * sj, 875, 60, 5)
+                    
+                     noFill()   
+                fill(255, 255, 255, 100)
+                rect(y *sj, 0, 20, b16)
+                b16 = b16 - 5
+            } else {
+                b16 = 300
+            }
+           }
+
+
+
+             if (y == 17) {
+            text('C#', y * sj + 5 - gb, 875)
+            if (note_indicator == 17) {
+                fill(70, 255, 120)
+                rect(y * sj, 875, 60, 5)
+                    
+                     noFill()   
+                fill(255, 255, 255, 100)
+                rect(y *sj, 0, 20, b17)
+                b17 = b17 - 5
+            } else {
+                b17 = 300
+            }
+           }
+
+
+
+
+             if (y == 18) {
+            text('D', y * sj + 5 - gb, 875)
+            if (note_indicator == 18) {
+                fill(70, 255, 120)
+                rect(y * sj, 875, 60, 5)
+            
+                     noFill()   
+                fill(255, 255, 255, 100)
+                rect(y *sj, 0, 20, b18)
+                b18 = b18 - 5
+            } else {
+                b18 = 300
+            }
+           }
+
+
+           if (y == 19) {
+            text('Eb', y * sj + 5 - gb, 875)
+            if (note_indicator == 19) {
+                fill(70, 255, 120)
+                rect(y * sj, 875, 60, 5)
+                    
+                     noFill()   
+                fill(255, 255, 255, 100)
+                rect(y *sj, 0, 20, b19)
+                b19 = b19 - 5
+            } else {
+                b19 = 300
+            }
+           }
+
+
+             if (y == 20) {
+            text('E', y * sj + 5 - gb, 875)
+            if (note_indicator == 20) {
+                fill(70, 255, 120)
+                rect(y * sj, 875, 60, 5)
+                    
+                     noFill()   
+                fill(255, 255, 255, 100)
+                rect(y *sj, 0, 20, bk20)
+                bk20 = bk20 - 5
+            } else {
+                bk20 = 300
+            }
+           }
+
+
+            if (y == 21) {
+            text('F', y * sj + 5 - gb, 875)
+            if (note_indicator == 21) {
+                fill(70, 255, 120)
+                rect(y * sj, 875, 60, 5)
+                    
+                     noFill()   
+                fill(255, 255, 255, 100)
+                rect(y *sj, 0, 20, b21)
+                b21 = b21 - 5
+            } else {
+                b21 = 300
+            }
+           }
+
+
+             if (y == 22) {
+            text('F#', y * sj + 5 - gb, 875)
+            if (note_indicator == 22) {
+                fill(70, 255, 120)
+                rect(y * sj, 875, 60, 5)
+                    
+                     noFill()   
+                fill(255, 255, 255, 100)
+                rect(y *sj, 0, 20, b22)
+                b22 = b22 - 5
+            } else {
+                b22 = 300
+            }
+           }
+
+
+             if (y == 23) {
+            text('G', y * sj + 5 - gb, 875)
+            if (note_indicator == 23) {
+                fill(70, 255, 120)
+                rect(y * sj, 875, 60, 5)
+                    
+                     noFill()   
+                fill(255, 255, 255, 100)
+                rect(y *sj, 0, 20, b23)
+                b23 = b23 - 5
+            } else {
+                b23 = 300
+            }
+           }
+
+
+             if (y == 24) {
+            text('G#', y * sj + 5 - gb, 875)
+            if (note_indicator == 24) {
+                fill(70, 255, 120)
+                rect(y * sj, 875, 60, 5)
+                    
+                     noFill()   
+                fill(255, 255, 255, 100)
+                rect(y *sj, 0, 20, b33)
+                b33 = b33 - 5
+            } else {
+                b33 = 300
+            }
+           }
+
+
+           if (y == 25) {
+            text('A', y * sj + 5 - gb, 875)
+            if (note_indicator == 25) {
+                fill(70, 255, 120)
+                rect(y * sj, 875, 60, 5)
+                    
+                     noFill()   
+                fill(255, 255, 255, 100)
+                rect(y *sj, 0, 20, b25)
+                b25 = b25 - 5
+            } else {
+                b25 = 300
+            }
+           }
+
+
+             if (y == 26) {
+            text('Bb', y * sj + 5 - gb, 875)
+            if (note_indicator == 26) {
+                fill(70, 255, 120)
+                rect(y * sj, 875, 60, 5)
+                    
+                     noFill()   
+                fill(255, 255, 255, 100)
+                rect(y *sj, 0, 20, b26)
+                b26 = b26 - 5
+            } else {
+                b26 = 300
+            }
+           }
+
+
+            if (y == 27) {
+            text('B', y * sj + 5 - gb, 875)
+            if (note_indicator == 27) {
+                fill(70, 255, 120)
+                rect(y * sj, 875, 60, 5)
+                    
+                     noFill()   
+                fill(255, 255, 255, 100)
+                rect(y *sj, 0, 20, b27)
+                b27 = b27 - 5
+            } else {
+                b27 = 300
+            }
+           }
+
+        }
+
+    for (let bebo = 2; bebo < 11; bebo++) {
+
+        pop()
+        print(note_indicator)
+        push()
+        fill(255,255,255, 50)
+        rect(bebo * 40, 900, 30,30)
+        fill(255)
+        textSize(25)
+        text(bebo - 1, bebo * 40 + 6, 925)
+    }
+
+    for (let sele = 1; sele < 5; sele++) {
+
+        fill(255, 255, 255, 25)
+        rect(sele * 40 + 1400, 900, 30, 30)
+        fill(255)
+        textSize(25)
+        if (sele == 1) {
+            text('[', sele * 40 + 1400 + 5, 915 )}
+        if (sele == 2) {
+            text(']', sele * 40 + 1400 + 5, 915 )
+        }
+        if (sele == 3) {
+            text('-', sele * 40 + 1400 + 5, 915 )}
+        if (sele == 4) {
+            text('=', sele * 40 + 1400 + 5, 915 )
+        }
+        
+
+    }
+
+
+
+
+}
+
 
 
 function touchStarted() {
